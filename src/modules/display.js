@@ -1,3 +1,5 @@
+
+
 const display = (() => {
     function setDisplay(weatherdata) {
         if (!weatherdata) return;
@@ -8,16 +10,14 @@ const display = (() => {
         const feelslike = document.getElementById('feelslike')
         const humidity = document.getElementById('humidity')
         const windspeed = document.getElementById('windspeed')
-        const country = document.getElementById('country') 
+        const result = document
 
         name.textContent = `${weatherdata.name}`
         temp.textContent = `${weatherdata.temp} C`
         feelslike.textContent = `Feels like: ${weatherdata.feelslike}`
         humidity.textContent = `Humidity: ${weatherdata.humidity}`
         windspeed.textContent = `Windspeed: ${weatherdata.windspeed}`
-        country.textContent = `${weatherdata.country}`
-    
-
+        document.body.style.backgroundImage = `url(https://countryflagsapi.com/svg/${weatherdata.country})`
     }
 
 
