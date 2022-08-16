@@ -1,7 +1,7 @@
 /////function to pull data from openweathermap API
 const weather = (() => {
 async function recieveLocationData(location){
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=ff02d978e63fdb995bf6241ddbf8661b`, {mode: 'cors'});
+    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=ff02d978e63fdb995bf6241ddbf8661b`, {mode: 'cors'});
     const weatherData = await response.json()
     if (weatherData.cod != 200)
         console.log('Response not found');
@@ -17,6 +17,8 @@ function pullData(obj) {
                         } = obj;
     return {name, temp, feelslike, humidity, country, windspeed}
 }
+
+return {recieveLocationData}
 })();
 
 
