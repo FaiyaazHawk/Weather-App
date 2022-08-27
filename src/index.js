@@ -14,6 +14,7 @@ searchform.addEventListener("submit", (e) => {
 
 inputbtn.addEventListener("click", async () => {
     if (inputform.value === "") return;
+    console.log(inputform.value)
     const weatherData = await weather.recieveLocationData(inputform.value);
     display.setDisplay(weatherData);
   });
